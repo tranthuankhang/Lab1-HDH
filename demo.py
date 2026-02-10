@@ -95,5 +95,4 @@ def input(System):
 def main():
     System = Sys()
     input(System)
-    print("Hello")
     
