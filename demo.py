@@ -95,4 +95,4 @@ def input(System):
 def main():
     System = Sys()
     input(System)
-    
+    print("So hang doi: ", System.number_of_queue)
