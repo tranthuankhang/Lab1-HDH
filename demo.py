@@ -57,7 +57,7 @@ class Sys:
 def read_number(f):
     s = ""
     ch = f.read(1)
-    while (ch != '\n' and ch != ' '):
+    while (ch != '\n' and ch != ' ' and ch != ''):
         s+=ch
         ch = f.read(1)    
     return int(s)
@@ -65,7 +65,7 @@ def read_number(f):
 def read_string(f):
     s = ""
     ch = f.read(1)
-    while (ch != '\n' and ch != ' '):
+    while (ch != '\n' and ch != ' ' and ch != ''):
         s+=ch
         ch = f.read(1)    
     return s
@@ -92,6 +92,18 @@ def input(System):
             elif(ch == ""):
                 break
 
+def test_print(System): # hàm test này đc viết bởi AI, dùng để test đảm bảo input
+    print(f"Number of queues: {System.number_of_queue}")
+    print()
+    for queue in System.queues:
+        print(f"Queue {queue.get_id()} | Time Slice: {queue.get_time_slice()} | Algorithm: {queue.get_alrogithm_type()}")
+        for p in queue.processes:
+            print(f"  Process {p.get_id()} | Arrival: {p.get_arrival()} | Burst: {p.get_burst()}")
+        print()
+
 def main():
     System = Sys()
     input(System)
+    test_print(System)
+
+main()
