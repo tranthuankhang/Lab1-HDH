@@ -10,6 +10,7 @@ class Process:
     def get_arrival(self):
         return self.arrival
     
+    
     def get_burst(self):
         return self.burst
 
