@@ -241,16 +241,6 @@ def output(System, output_filename): #in qua trinh xu ly CPU
         f.write(f"Average Waiting Time : {Avg_waiting_time/k}\n")
         f.write("==================================================")
 
-
-def test_print(System): # hàm test này đc viết bởi AI, dùng để test đảm bảo input
-    print(f"Number of queues: {System.number_of_queue}")
-    print()
-    for queue in System.queues:
-        print(f"Queue {queue.get_id()} | Time Slice: {queue.get_time_slice()} | Algorithm: {queue.get_algorithm_type()}")
-        for p in queue.processes:
-            print(f"  Process {p.get_id()} | Arrival: {p.get_arrival()} | Burst: {p.get_burst()}")
-        print()
-
 def main():
     if len(sys.argv) >= 3:
         input_filename = sys.argv[1]
