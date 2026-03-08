@@ -159,7 +159,7 @@ def read_string(f):
         ch = f.read(1)    
     return s
 
-def input(System, input_filename):
+def read_input_file(System, input_filename):
     with open(input_filename, "r") as f:
         System.set_number_of_queue(read_number(f))
         is_queues_sorted = False
@@ -196,7 +196,7 @@ def input(System, input_filename):
 
                 break
 
-def output(System, output_filename): #in qua trinh xu ly CPU
+def write_output_file(System, output_filename): #in qua trinh xu ly CPU
     with open(output_filename, "w") as f:
         f.write("================== CPU SCHEDULING DIAGRAM ==================\n")
         f.write(f"\n{'[Start - End]':<15} {'Queue':<7} {'Process':<7}\n")
@@ -250,9 +250,9 @@ def main():
         output_filename = "Output.txt"
     
     System = Sys()
-    input(System, input_filename)
+    read_input_file(System, input_filename)
     System.Run()
     System.calculate_time()
-    output(System, output_filename)
+    write_output_file(System, output_filename)
 
 main()
